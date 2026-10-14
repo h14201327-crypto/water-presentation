@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Свойства воды — 7 класс</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #061b3a;
+    color: #fff;
+    overflow: hidden;
+  }
+  .slide {
+    display: none;
+    height: 100vh;
+    padding: 40px 60px;
+    background: linear-gradient(135deg, #0b3d91 0%, #1e90ff 60%, #7fd4ff 100%);
+    animation: fade 0.6s ease;
+    position: relative;
+  }
+  .slide.active { display: flex; flex-direction: column; }
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  h1 { font-size: 52px; margin: 0 0 10px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+  h2 {
+    font-size: 38px;
+    margin: 0 0 25px;
+    border-bottom: 4px solid #7fd4ff;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+  ul { font-size: 25px; line-height: 1.7; margin: 10px 0; padding-left: 30px; }
+  li { margin-bottom: 8px; }
+  p  { font-size: 22px; }
+
+  /* Двухколоночный макет */
+  .row { display: flex; gap: 40px; align-items: center; flex: 1; }
+  .col-text { flex: 1.3; }
+  .col-img  { flex: 1; text-align: center; }
+
+  /* Крупные эмодзи вместо картинок */
+  .emoji {
+    font-size: 180px;
+    line-height: 1;
+    filter: drop-shadow(0 10px 25px rgba(0,0,0,0.5));
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-15px); }
+  }
+
+  /* Титульный слайд */
+  .title-box {
+    margin: auto;
+    text-align: center;
+    background: rgba(0,0,0,0.35);
+    padding: 50px 80px;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  }
+  .title-box .emoji { font-size: 120px; }
+
+  /* Таблица */
+  table {
+    font-size: 22px;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  td, th { border: 1px solid rgba(255,255,255,0.4); padding: 12px 22px; }
+  th { background: rgba(127,212,255,0.25); }
+
+  /* Схема трёх состояний */
+  .states {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+    flex: 1;
+    align-items: center;
+  }
+  .state {
+    background: rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 25px 20px;
+    text-align: center;
+    flex: 1;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  }
+  .state .emoji { font-size: 90px; }
+  .state h3 { font-size: 24px; margin: 10px 0; }
+
+  /* Крупные цифры */
+  .big-num {
+    font-size: 72px;
+    font-weight: bold;
+    color: #ffd54f;
+    text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  /* Навигация */
+  .nav {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+  .nav button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background: #7fd4ff;
+    color: #061b3a;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: background 0.2s;
+  }
+  .nav button:hover { background: #ffffff; }
+
+  .counter {
+    position: fixed;
+    bottom: 25px;
+    left: 30px;
+    font-size: 18px;
+    color: #cde9ff;
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<!-- СЛАЙД 1 — Титульный -->
+<div class="slide active">
+  <div class="title-box">
+    <div class="emoji">💧</div>
+    <h1>Свойства воды</h1>
+    <h2 style="border:none; font-size:30px;">в твёрдом и жидком состоянии</h2>
+    <p style="font-size:22px; margin-top:25px;">
+      Физика • 7 класс<br>
+      Автор: (твоё имя)<br>
+      Учитель: (ФИО)<br>
+      2025 год
+    </p>
+  </div>
+</div>
+
+<!-- СЛАЙД 2 — Введение -->
+<div class="slide">
+  <h2>Введение</h2>
+  <div class="row">
+    <div class="col-text">
+      <ul>
+        <li>Вода — самое распространённое вещество на Земле</li>
+        <li>Встречается в <b>трёх агрегатных состояниях</b></li>
+        <li>Рассмотрим твёрдое (лёд) и жидкое состояние</li>
+        <li>Вода — уникальное вещество с аномальными свойствами</li>
+      </ul>
+    </div>
+    <div class="col-img">
+      <div class="emoji">🌍</div>
+    </div>
+  </div>
+</div>
+
+<!-- СЛАЙД 3 — Агрегатные состояния -->
+<div class="slide">
+  <h2>Агрегатные состояния</h2>
+  <div class="states">
+    <div class="state">
+      <div class="emoji">🧊</div>
+      <h3>Твёрдое</h3>
+      <p>Частицы упорядочены.<br>Форма и объём сохраняются.</p>
+    </div>
+    <div class="state">
+      <div class="emoji">💧</div>
+      <h3>Жидкое</h3>
+      <p>Частицы подвижны.<br>Объём сохраняется, форма — нет.</p>
+    </div>
+    <div class="state">
+      <div class="emoji">☁️</div>
+      <h3>Газообразное</h3>
+      <p>Частицы движутся хаотично.<br>Занимает весь объём.</p>
+    </div>
+  </div>
+</div>
+
+<!-- СЛАЙД 4 — Строение молекулы -->
+<div class="slide">
+  <h2>Строение молекулы воды</h2>
+  <div class="row">
+    <div class="col-text">
+      <ul>
+        <li>Формула: <b>H₂O</b></li>
+        <li>1 атом кислорода + 2 атома водорода</li>
+        <li>Молекулы <b>полярны</b></li>
+        <li>Водородные связи объясняют свойства воды</li>
+      </ul>
+    </div>
+    <div class="col-img">
+      <div class="emoji">⚛️</div>
+      <p style="font-size:26px; margin-top:10px;"><b>H₂O</b></p>
+    </div>
+  </div>
+</div>
+
+<!-- СЛАЙД 5 — Свойства жидкой воды -->
+<div class="slide">
+  <h2>Свойства жидкой воды</h2>
+  <div class="row">
+    <div class="col-text">
+      <ul>
+        <li>Плотность: <b>1000 кг/м³</b> (максимум при 4 °C)</li>
+        <li>Кипение: <b>100 °C</b></li>
+        <li>Замерзание: <b>0 °C</b></li>
+        <li>Текучесть, хороший растворитель</li>
+        <li>Прозрачная, без цвета и запаха</li>
+        <li>Плохо проводит тепло и ток</li>
+      </ul>
+    </div>
+    <div class="col-img">
+      <div class="emoji">💧</div>
+    </div>
+  </div>
+</div>
+
+<!-- СЛАЙД 6 — Свойства льда -->
+<div class="slide">
+  <h2>Свойства льда</h2>
+  <div class="row">
+    <div class="col-text">
+      <ul>
+        <li>Плотность льда: <b>900 кг/м³</b> — меньше, чем у воды</li>
+        <li>Лёд <b>плавает</b> на поверхности</li>
+        <li>Плавление: <b>0 °C</b></li>
+        <li>Хрупкий, кристаллическая решётка</li>
+        <li>Плохо проводит тепло</li>
+        <li>Прозрачный, бесцветный</li>
+      </ul>
+    </div>
+    <div class="col-img">
+      <div class="emoji">❄️</div>
+    </div>
+  </div>
+</div>
+
+<!-- СЛАЙД 7 — Плотность льда -->
+<div class="slide">
+  <h2>Главная особенность: плотность льда</h2>
+  <div class="row">
+    <div class="col-text">
+      <ul>
+        <li>У большинства веществ твёрдое плотнее жидкого</li>
+        <li>У воды — <b>наоборот</b>: лёд легче воды</li>
+        <li>Причина — водородные связи</li>
+        <li>Значение: лёд защищает водоёмы от замерзания</li>
+      </ul>
+    </div>
+    <div class="col-img">
+      <div class="emoji">🧊</div>
+    </div>
+  </div>
+</div>
+
+<!-- СЛАЙД 8 — Аномалия плотности -->
+<div class="slide">
+  <h2>Аномалия плотности воды</h2>
+  <div class="row">
+    <div class="col-text">
+      <ul>
+        <li>При охлаждении от 100 до 4 °C вода сжимается</li>
+        <li>При <b>4 °C</b> плотность максимальна</li>
+        <li>От 4 до 0 °C вода расширяется</li>
+        <li>На дне водоёма зимой вода около 4 °C</li>
+      </ul>
+    </div>
+    <div class="col-img">
+      <div class="emoji">🌊</div>
+    </div>
+  </div>
+</div>
+
+<!-- СЛАЙД 9 — Тепловые свойства -->
+<div class="slide">
+  <h2>Тепловые свойства</h2>
+  <div class="row">
+    <div class="col-text">
+      <span class="big-num">4200 Дж/(кг·°C)</span>
+      <ul>
+        <li>Удельная теплоёмкость воды — очень большая</li>
+        <li>Вода медленно нагревается и остывает</li>
+        <li>Теплоноситель в отоплении</li>
+        <li>Моря сглаживают климат</li>
+      </ul>
+    </div>
+    <div class="col-img">
+      <div class="emoji">🔥</div>
+    </div>
+  </div>
+</div>
+
+<!-- СЛАЙД 10 — Сравнение -->
+<div class="slide">
+  <h2>Сравнение: лёд и вода</h2>
+  <table>
+    <tr><th>Свойство</th><th>Жидкая вода</th><th>Лёд</th></tr>
+    <tr><td>Плотность</td><td>1000 кг/м³</td><td>900 кг/м³</td></tr>
+    <tr><td>Форма</td><td>не сохраняется</td><td>сохраняется</td></tr>
+    <tr><td>Температура перехода</td><td>0 °C (замерзание)</td><td>0 °C (плавление)</td></tr>
+    <tr><td>Теплопроводность</td><td>плохая</td><td>плохая</td></tr>
+    <tr><td>Электропроводность</td><td>почти нет</td><td>почти нет</td></tr>
+  </table>
+</div>
+
+<!-- СЛАЙД 11 — Значение свойств -->
+<div class="slide">
+  <h2>Значение свойств воды</h2>
+  <div class="row">
+    <div class="col-text">
+      <ul>
+        <li>Лёд защищает жизнь под водой</li>
+        <li>Высокая теплоёмкость регулирует климат</li>
+        <li>Вода — растворитель питательных веществ</li>
+        <li>Аномальная плотность спасает рыбу зимой</li>
+      </ul>
+    </div>
+    <div class="col-img">
+      <div class="emoji">🐟</div>
+    </div>
+  </div>
+</div>
+
+<!-- СЛАЙД 12 — Вывод -->
+<div class="slide">
+  <h2>Вывод</h2>
+  <div class="row">
+    <div class="col-text">
+      <ul>
+        <li>Вода обладает уникальными свойствами</li>
+        <li>Лёд легче воды, максимум плотности при 4 °C</li>
+        <li>Объясняется строением молекулы и водородными связями</li>
+        <li>Благодаря воде возможна жизнь на Земле</li>
+      </ul>
+    </div>
+    <div class="col-img">
+      <div class="emoji">💧</div>
+    </div>
+  </div>
+</div>
+
+<div class="counter"><span id="cur">1</span> / 12</div>
+
+<div class="nav">
+  <button onclick="prev()">◀ Назад</button>
+  <button onclick="next()">Вперёд ▶</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let i = 0;
+
+  function show(n) {
+    slides[i].classList.remove('active');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('active');
+    document.getElementById('cur').textContent = i + 1;
+  }
+  function next() { show(i + 1); }
+  function prev() { show(i - 1); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') next();
+    if (e.key === 'ArrowLeft') prev();
+  });
+</script>
+
+</body>
+</html>
